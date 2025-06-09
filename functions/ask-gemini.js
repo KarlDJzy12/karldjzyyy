@@ -20,7 +20,7 @@ exports.handler = async function (event, context) {
       return { statusCode: 400, body: "Question is required." };
     }
 
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const result = await model.generateContent(question);
     const response = await result.response;
     const text = response.text();
