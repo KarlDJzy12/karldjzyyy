@@ -14,26 +14,23 @@ exports.handler = async function (event, context) {
   }
 
   try {
-    // Ambil pertanyaan user dari body request
     const { question } = JSON.parse(event.body);
-    if (!question) {
-      return { statusCode: 400, body: "Question is required." };
-    }
+    if (!question) { /* ... */ }
+
+    // CATAT PERTANYAAN USER
+    console.log(`User asks: "${question}"`);
 
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const result = await model.generateContent(question);
     const response = await result.response;
     const text = response.text();
 
+    // CATAT JAWABAN BOT
+    console.log(`Bot replies: "${text}"`);
+
     return {
       statusCode: 200,
       body: JSON.stringify({ reply: text }),
     };
-  } catch (error) {
-    console.error("Error calling Gemini API:", error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: "Failed to get response from AI." }),
-    };
-  }
+  } catch (error) { /* ... */ }
 };
