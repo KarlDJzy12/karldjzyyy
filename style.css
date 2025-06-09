@@ -1,0 +1,1566 @@
+/* === Untuk WebKit browsers (Chrome, Safari, Edge Chromium) === */
+::-webkit-scrollbar {
+  width: 0px; /* <- Lebih kecil */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* === Untuk Firefox === */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+/* Class untuk mengunci scroll pada body */
+body.scroll-locked {
+  overflow: hidden;
+}
+
+@keyframes slideDownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeftFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Class untuk memunculkan model viewer */
+model-viewer.visible {
+  opacity: 1;
+}
+
+model-viewer {
+  position: absolute;
+  top: 1000px; /* Posisi vertikal di bawah "MAKE IT REAL" */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 400px;
+  display: block;
+  /* --- TAMBAHAN --- */
+  opacity: 0; /* Sembunyikan model viewer secara default */
+  transition: opacity 1.5s ease-out; /* Beri efek transisi fade-in selama 1.5 detik */
+}
+
+/* ======================================= */
+/* KODE CSS HOVER TAMBAHAN          */
+/* ======================================= */
+
+/* Efek transisi halus untuk semua elemen yang akan diberi hover */
+.portofolio .text-wrapper,
+.portofolio .text-wrapper-2,
+.portofolio .text-wrapper-3,
+.portofolio .quick-chat,
+.portofolio .text-wrapper-9,
+.portofolio .text-wrapper-10 {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Menambahkan kursor pointer dan efek glow pada menu navigasi */
+.portofolio .text-wrapper:hover,
+.portofolio .text-wrapper-2:hover,
+.portofolio .text-wrapper-3:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  text-shadow: 0px 0px 15px #ffffff;
+}
+
+/* Menambahkan kursor pointer dan efek glow pada Quick Chat */
+.portofolio .quick-chat:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  text-shadow: 0px 0px 15px #ffffff;
+}
+
+/* Menambahkan kursor pointer dan mengubah warna teks pada tombol WEB */
+.portofolio .k-IRI:hover .text-wrapper-9 {
+  cursor: pointer;
+  color: #a9a9a9; /* Warna abu-abu terang sebagai contoh */
+}
+
+/* Menambahkan kursor pointer dan mengubah warna teks pada tombol AUDIO */
+.portofolio .k-ANAN:hover .text-wrapper-10 {
+  cursor: pointer;
+  color: #a9a9a9; /* Warna abu-abu terang sebagai contoh */
+}
+
+/* Memberikan efek hover pada elemen parent agar lebih interaktif */
+.portofolio .k-IRI:hover,
+.portofolio .k-ANAN:hover {
+  cursor: pointer;
+}
+
+.portofolio .border-navbar,
+.portofolio .img {
+  animation: slideDownFade 2s ease-out;
+}
+
+.portofolio .text-wrapper,
+.portofolio .text-wrapper-2,
+.portofolio .text-wrapper-3 {
+  animation: slideDownFade 2s ease-out;
+}
+
+.portofolio .overlay-kanan {
+  animation: slideLeftFade 2s ease-out;
+}
+
+.portofolio .quick-chat {
+  animation: slideLeftFade 2.5s ease-out;
+}
+
+.portofolio .tagline {
+  animation: slideLeftFade 1.5s ease-out;
+}
+
+@font-face {
+  font-family: "Genos-Regular";
+  src: url("fonts/genos-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FRIZON-Regular";
+  src: url("fonts/frizon.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Vendya-Regular";
+  src: url("fonts/vendya.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Broske-Regular";
+  src: url("fonts/Broske-BF675dec09b3980.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "League Spartan-ExtraLight";
+  src: url("fonts/LeagueSpartan-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Brown Austin-Regular";
+  src: url("fonts/brown-austin.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Runtime-Regular";
+  src: url("fonts/RuntimeRegular-m2Odx.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Denton Test-Thin";
+  src: url("fonts/DentonTest-Thin.otf") format("opentype");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Engagement-Regular";
+  src: url("fonts/Engagement-Regular.ttf") format("truetype");
+}
+
+.portofolio {
+  background-color: #000000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.portofolio .div {
+  background-color: #000000;
+  overflow: hidden;
+  width: 1440px;
+  height: 2580px;
+  position: relative;
+}
+
+.portofolio .overlap {
+  position: absolute;
+  width: 1437px;
+  height: 1724px;
+  top: 0;
+  left: 5px;
+}
+
+.portofolio .overlap-group {
+  position: absolute;
+  width: 1437px;
+  height: 1724px;
+  top: 0;
+  left: 0;
+}
+
+.portofolio .text-wrapper {
+  font-family: "Genos", Helvetica;
+}
+
+/* --- KODE PERBAIKAN UNTUK NAVIGASI --- */
+.portofolio .text-wrapper,
+.portofolio .text-wrapper-2,
+.portofolio .text-wrapper-3 {
+  width: 226px;
+  top: 29px;
+  font-family: "Genos-Regular", Helvetica;
+  color: #ffffff;
+  font-size: 33.8px;
+  position: absolute;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  z-index: 2; /* <-- Tambahkan ini untuk mengangkat posisi layer */
+  transition: all 0.3s ease; /* <-- Tambahkan ini untuk transisi hover */
+}
+
+/* Penyesuaian posisi untuk masing-masing teks */
+.portofolio .text-wrapper {
+  left: 376px;
+}
+
+.portofolio .text-wrapper-2 {
+  left: 602px;
+}
+
+.portofolio .text-wrapper-3 {
+  left: 828px;
+}
+
+/* Efek Hover */
+.portofolio .text-wrapper:hover,
+.portofolio .text-wrapper-2:hover,
+.portofolio .text-wrapper-3:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  text-shadow: 0px 0px 15px #ffffff;
+}
+/* --- AKHIR DARI KODE PERBAIKAN --- */
+
+.portofolio .tengah {
+  position: absolute;
+  width: 684px;
+  height: 118px;
+  top: 343px;
+  left: 374px;
+}
+
+/* Teks KarlDJzy sekarang mengikuti wadahnya (SUDAH DIPERBAIKI) */
+.portofolio .karl-d-jzy {
+  /* Hapus semua properti posisi dan ukuran */
+  position: relative; /* Membuat teks tetap terlihat di atas hujan */
+  z-index: 1; /* Memastikan teks di depan hujan */
+  width: 100%;
+  height: 100%;
+
+  /* Properti font asli dipertahankan */
+  -webkit-text-stroke: 0.79px #727272;
+  font-family: "FRIZON-Regular", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 114.1px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.portofolio .span {
+  color: #383838;
+}
+
+.portofolio .text-wrapper-4 {
+  color: #ffffff;
+}
+
+.portofolio .footer-service {
+  position: absolute;
+  width: 630px;
+  height: 59px;
+  top: 1613px;
+  left: 400px;
+}
+
+.portofolio .react {
+  position: absolute;
+  width: 59px;
+  height: 59px;
+  top: 0;
+  left: 71px;
+  background-image: url(./img/rectangle-65.png);
+  background-size: 100% 100%;
+}
+
+.portofolio .rectangle {
+  position: relative;
+  width: 61px;
+  height: 61px;
+  top: -1px;
+  left: -1px;
+  background-color: #6f6f6f03;
+  border-radius: 11.76px;
+  border: 1.18px solid;
+  border-color: #c3c3c3;
+  box-shadow: inset -33.87px 33.87px 33.87px #ffffff1a,
+    inset 33.87px -33.87px 33.87px #a4a4a41a;
+  backdrop-filter: blur(5.88px) brightness(100%);
+  -webkit-backdrop-filter: blur(5.88px) brightness(100%);
+}
+
+.portofolio .vscode {
+  position: absolute;
+  width: 59px;
+  height: 59px;
+  top: 0;
+  left: 0;
+  background-image: url(./img/image.png);
+  background-size: 100% 100%;
+}
+
+.portofolio .fl {
+  position: absolute;
+  width: 59px;
+  height: 59px;
+  top: 0;
+  left: 214px;
+  background-image: url(./img/rectangle-67-2.png);
+  background-size: 100% 100%;
+}
+
+.portofolio .au {
+  position: absolute;
+  width: 59px;
+  height: 59px;
+  top: 0;
+  left: 143px;
+  background-image: url(./img/rectangle-66.png);
+  background-size: 100% 100%;
+}
+
+.portofolio .figma {
+  position: absolute;
+  width: 59px;
+  height: 59px;
+  top: 0;
+  left: 357px;
+  background-image: url(./img/rectangle-65-2.png);
+  background-size: 100% 100%;
+}
+
+.portofolio .vue {
+  position: absolute;
+  width: 59px;
+  height: 59px;
+  top: 0;
+  left: 286px;
+  background-image: url(./img/rectangle-58.png);
+  background-size: 100% 100%;
+}
+
+.portofolio .python {
+  position: absolute;
+  width: 59px;
+  height: 59px;
+  top: 0;
+  left: 500px;
+  background-image: url(./img/rectangle-67.png);
+  background-size: 100% 100%;
+}
+
+.portofolio .laravel {
+  position: absolute;
+  width: 59px;
+  height: 59px;
+  top: 0;
+  left: 571px;
+  background-image: url(./img/rectangle-68.png);
+  background-size: 100% 100%;
+}
+
+.portofolio .framer {
+  position: absolute;
+  width: 59px;
+  height: 59px;
+  top: 0;
+  left: 428px;
+  background-image: url(./img/framer.png);
+  background-size: 100% 100%;
+}
+
+.portofolio .teks-tengah-slide {
+  position: absolute;
+  width: 322px;
+  height: 57px;
+  top: 980px;
+  left: 556px;
+}
+
+.portofolio .overlap-group-2 {
+  position: relative;
+  width: 318px;
+  height: 57px;
+}
+
+.portofolio .text-wrapper-5 {
+  position: absolute;
+  width: 318px;
+  top: 0;
+  left: 0;
+  text-shadow: 0px 0px 26.71px #ffffff;
+  font-family: "Genos-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 47.5px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.portofolio .text-wrapper-6 {
+  position: absolute;
+  width: 318px;
+  top: 0;
+  left: 0;
+  font-family: "Genos-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 47.5px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.portofolio .tagline {
+  position: absolute;
+  width: 321px;
+  height: 25px;
+  top: 745px;
+  left: 1116px;
+}
+
+.portofolio .line {
+  width: 100px;
+  height: 1px;
+  top: 12px;
+  left: 219px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.portofolio .text-wrapper-7 {
+  position: absolute;
+  width: 219px;
+  top: 0;
+  left: 0;
+  text-shadow: 0px 0px 27px #ffffff;
+  font-family: "Brown Austin-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 20.4px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.portofolio .border-navbar {
+  position: absolute;
+  width: 766px;
+  height: 99px;
+  top: 0;
+  left: 331px;
+}
+
+.portofolio .img {
+  position: absolute;
+  width: 1262px;
+  height: 347px;
+  top: 0;
+  left: 83px;
+}
+
+.portofolio .pembatas-hapus {
+  position: absolute;
+  width: 1383px;
+  height: 860px;
+  top: 864px;
+  left: 23px;
+}
+
+.portofolio .line-2 {
+  width: 1383px;
+  height: 1px;
+  top: -1px;
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+}
+
+.portofolio .line-3 {
+  width: 1383px;
+  height: 1px;
+  top: 859px;
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+}
+
+.portofolio .overlay-kanan {
+  position: absolute;
+  width: 406px;
+  height: 943px;
+  top: 0;
+  left: 1028px;
+}
+
+.portofolio .quick-chat {
+  position: absolute;
+  width: 78px;
+  top: 418px;
+  left: 1318px;
+  font-family: "Vendya-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 26.9px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.portofolio .logo {
+  position: absolute;
+  width: 195px;
+  height: 194px;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.portofolio .text-wrapper-8 {
+  position: absolute;
+  width: 332px;
+  top: 1125px;
+  left: 1px;
+  text-shadow: 0px 0px 39.89px #ffffff;
+  font-family: "Brown Austin-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 45.6px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.portofolio .line-4 {
+  width: 1px;
+  height: 340px;
+  top: 1183px;
+  left: 226px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.portofolio .p {
+  position: absolute;
+  width: 434px;
+  top: 1531px;
+  left: 498px;
+  font-family: "Brown Austin-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15.7px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.portofolio .BUTTON-TENGAH {
+  position: absolute;
+  width: 405px;
+  height: 46px;
+  top: 506px;
+  left: 513px;
+}
+
+.portofolio .overlap-2 {
+  position: relative;
+  width: 407px;
+  height: 46px;
+}
+
+.portofolio .k-IRI {
+  position: absolute;
+  width: 204px;
+  height: 46px;
+  top: 0;
+  left: 0;
+}
+
+.portofolio .overlap-group-3 {
+  position: relative;
+  width: 404px;
+  height: 250px;
+  top: -102px;
+  left: -101px;
+}
+
+.portofolio .vector {
+  top: 3px;
+  left: 0;
+  position: absolute;
+  width: 403px;
+  height: 246px;
+}
+
+.portofolio .vector-2 {
+  top: 0;
+  left: 1px;
+  position: absolute;
+  width: 403px;
+  height: 246px;
+}
+
+.portofolio .text-wrapper-9 {
+  top: 111px;
+  left: 172px;
+  font-family: "Runtime-Regular", Helvetica;
+  position: absolute;
+  width: 57px;
+  -webkit-text-stroke: 1px #434343;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 21.3px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  z-index: 2; /* <-- Tambahkan ini */
+  transition: color 0.3s ease; /* <-- Tambahkan ini */
+}
+
+.portofolio .k-ANAN {
+  position: absolute;
+  width: 222px;
+  height: 44px;
+  top: 1px;
+  left: 184px;
+}
+
+.portofolio .div-wrapper {
+  position: relative;
+  width: 723px;
+  height: 545px;
+  top: -250px;
+  left: -251px;
+  background-image: url(./img/vector-19.svg);
+  background-size: 100% 100%;
+}
+
+.portofolio .text-wrapper-10 {
+  width: 64px;
+  top: 255px;
+  left: 328px;
+  -webkit-text-stroke: 1px #c9c9c9;
+  font-family: "Runtime-Regular", Helvetica;
+  color: #000000;
+  position: absolute;
+  font-weight: 400;
+  font-size: 21.3px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.portofolio .quotes {
+  position: absolute;
+  width: 432px;
+  height: 98px;
+  top: 643px;
+  left: 503px;
+}
+
+.portofolio .text-wrapper-11 {
+  position: absolute;
+  width: 194px;
+  top: 34px;
+  left: 230px;
+  font-family: "League Spartan-ExtraLight", Helvetica;
+  font-weight: 200;
+  color: #ffffff;
+  font-size: 16.4px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.portofolio .a-well-crafted {
+  position: absolute;
+  width: 210px;
+  top: 34px;
+  left: 0;
+  font-family: "League Spartan-ExtraLight", Helvetica;
+  font-weight: 200;
+  color: #ffffff;
+  font-size: 16.4px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.portofolio .text-wrapper-12 {
+  top: -1px;
+  left: 71px;
+  font-family: "Broske-Regular", Helvetica;
+  position: absolute;
+  width: 57px;
+  -webkit-text-stroke: 1px #434343;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 21.3px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.portofolio .text-wrapper-13 {
+  width: 62px;
+  top: -1px;
+  left: 291px;
+  -webkit-text-stroke: 1px #434343;
+  font-family: "Broske-Regular", Helvetica;
+  color: #ffffff;
+  position: absolute;
+  font-weight: 400;
+  font-size: 21.3px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.portofolio .text-wrapper-14 {
+  width: 332px;
+  top: 1915px;
+  left: 554px;
+  text-shadow: 0px 0px 39.89px #ffffff;
+  font-family: "Brown Austin-Regular", Helvetica;
+  font-size: 45.6px;
+  position: absolute;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.portofolio .overlap-3 {
+  position: absolute;
+  width: 967px;
+  height: 557px;
+  top: 2023px;
+  left: 28px;
+}
+
+.portofolio .quotes-2 {
+  position: absolute;
+  width: 539px;
+  height: 252px;
+  top: 70px;
+  left: 428px;
+}
+
+.portofolio .overlap-4 {
+  position: absolute;
+  width: 525px;
+  height: 150px;
+  top: 0;
+  left: 0;
+}
+
+.portofolio .EYES {
+  position: absolute;
+  width: 360px;
+  top: 0;
+  left: 165px;
+  font-family: "Broske-Regular", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 70.2px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.portofolio .text-wrapper-15 {
+  color: #545454;
+}
+
+.portofolio .text-wrapper-16 {
+  width: 360px;
+  top: 0;
+  left: 0;
+  text-shadow: 0px 0px 21.6px #ffffff;
+  font-family: "Broske-Regular", Helvetica;
+  color: #ffffff;
+  font-size: 70.2px;
+  position: absolute;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.portofolio .text-wrapper-17 {
+  position: absolute;
+  width: 360px;
+  top: 72px;
+  left: 90px;
+  background: linear-gradient(
+    179deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(108, 108, 108, 1) 44%
+  );
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Runtime-Regular", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 70.2px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.portofolio .overlap-5 {
+  position: absolute;
+  width: 526px;
+  height: 86px;
+  top: 166px;
+  left: 3px;
+}
+
+.portofolio .text-wrapper-18 {
+  width: 360px;
+  top: 0;
+  left: 166px;
+  text-shadow: 0px 0px 32.4px #db2727;
+  font-family: "Vendya-Regular", Helvetica;
+  color: #db2626;
+  font-size: 70.2px;
+  position: absolute;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.portofolio .text-wrapper-19 {
+  width: 360px;
+  top: 9px;
+  left: 0;
+  text-shadow: 0px 0px 32.4px #ffffff;
+  font-family: "Broske-Regular", Helvetica;
+  color: #ffffff;
+  font-size: 70.2px;
+  position: absolute;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.portofolio .quotes-kiri {
+  position: absolute;
+  width: 549px;
+  height: 490px;
+  top: 0;
+  left: 0;
+}
+
+.portofolio .overlap-6 {
+  position: relative;
+  width: 545px;
+  height: 490px;
+}
+
+.portofolio .overlap-7 {
+  position: absolute;
+  width: 406px;
+  height: 490px;
+  top: 0;
+  left: 0;
+}
+
+.portofolio .text-wrapper-20 {
+  position: absolute;
+  width: 406px;
+  top: 0;
+  left: 0;
+  font-family: "Brown Austin-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 17.8px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.portofolio .line-5 {
+  width: 1px;
+  height: 424px;
+  top: 66px;
+  left: 298px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.portofolio .karldjzy-s-FAMILY {
+  position: absolute;
+  width: 246px;
+  top: 466px;
+  left: 299px;
+  text-shadow: 0px 0px 10px #ffffff40;
+  font-family: "FRIZON-Regular", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 23.6px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.portofolio .text-wrapper-21 {
+  color: #373737;
+}
+
+.portofolio .text-wrapper-22 {
+  font-family: "Broske-Regular", Helvetica;
+  color: #ffffff;
+}
+
+.portofolio .text-wrapper-23 {
+  font-family: "Denton Test-Thin", Helvetica;
+  font-weight: 100;
+  color: #ffffff;
+}
+
+.portofolio .star {
+  position: absolute;
+  width: 182px;
+  height: 168px;
+  top: 391px;
+  left: 470px;
+}
+
+.portofolio .NOT-ONE-BUT-IM-THE {
+  position: absolute;
+  width: 232px;
+  top: 518px;
+  left: 576px;
+  font-family: "Denton Test-Thin", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 19px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.portofolio .text-wrapper-24 {
+  font-weight: 100;
+  color: #ffffff;
+}
+
+.portofolio .text-wrapper-25 {
+  font-family: "Engagement-Regular", Helvetica;
+  color: #c6209a;
+}
+
+#canvas-container {
+  position: absolute;
+  top: 1050px; /* Posisi di bawah "MAKE IT REAL" */
+  left: 50%;
+  transform: translateX(-50%); /* Agar pas di tengah horizontal */
+  width: 900px;
+  height: 450px;
+  z-index: 0; /* Pastikan tidak menutupi elemen lain */
+}
+
+#canvas-container canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* ======================================= */
+/* KODE CSS ANIMASI BARU (TAMBAHAN)        */
+/* ======================================= */
+
+/* --- Keyframes untuk Animasi --- */
+
+/* 1. Animasi slide dari kiri ke kanan dengan fade */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 2. Animasi garis tumbuh dari atas ke bawah */
+@keyframes growDown {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* 3. Animasi 'hop' (naik sedikit lalu turun) untuk ikon */
+@keyframes hop {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* --- Penerapan pada Elemen --- */
+
+/*
+ * Konfigurasi awal untuk elemen sebelum animasi berjalan.
+ * Kita sembunyikan elemennya terlebih dahulu.
+*/
+
+/* Untuk teks "WHAT I DO" */
+.portofolio .text-wrapper-8 {
+  opacity: 0; /* Mulai dengan transparan */
+}
+
+/* Untuk garis di bawah "WHAT I DO" */
+.portofolio .line-4 {
+  transform-origin: top; /* Titik awal animasi 'grow' adalah dari atas */
+  transform: scaleY(0); /* Mulai dengan skala tinggi 0 */
+}
+
+/* Untuk semua ikon (div dan gambar) di footer-service */
+.portofolio .footer-service > div,
+.portofolio .footer-service > img {
+  opacity: 0; /* Mulai dengan transparan */
+}
+
+/* Menerapkan animasi 'hop' pada ikon (div dan gambar) */
+.portofolio .footer-service > div.visible,
+.portofolio .footer-service > img.visible {
+  opacity: 1; /* Tampilkan ikon sebelum animasi hop berjalan */
+  animation: hop 0.5s ease-out forwards;
+}
+
+/*
+ * Class `.visible` ini akan ditambahkan oleh JavaScript
+ * saat elemen terlihat di layar untuk memicu animasi.
+*/
+
+/* Menerapkan animasi pada "WHAT I DO" */
+.portofolio .text-wrapper-8.visible {
+  animation: slideInFromLeft 2s ease-out forwards;
+}
+
+/* Menerapkan animasi pada garis */
+.portofolio .line-4.visible {
+  animation: growDown 1s ease-out forwards;
+  animation-delay: 2s; /* <-- DELAY: Muncul setelah animasi "WHAT I DO" selesai (2 detik) */
+}
+
+/* --- Keyframe tambahan untuk slide dari kiri --- */
+@keyframes slideFromLeftFade {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --- Animasi untuk Tombol WEB (kiri) --- */
+.portofolio .k-IRI {
+  /* Sembunyikan tombol sebelum animasi dimulai */
+  opacity: 0;
+
+  /* Terapkan animasi slide dari kiri */
+  animation: slideFromLeftFade 2s ease-out forwards;
+
+  /* DELAY: Mulai animasi setelah "Quick Chat" selesai (2.5 detik) */
+  animation-delay: 2.5s;
+}
+
+/* --- Animasi untuk Tombol AUDIO (kanan) --- */
+.portofolio .k-ANAN {
+  /* Sembunyikan tombol sebelum animasi dimulai */
+  opacity: 0;
+
+  /* Terapkan animasi slide dari kanan (menggunakan @keyframes yang sudah ada) */
+  animation: slideLeftFade 2s ease-out forwards;
+
+  /* DELAY: Mulai animasi setelah "Quick Chat" selesai (2.5 detik) */
+  animation-delay: 2.5s;
+}
+
+/* --- Keyframe tambahan untuk efek "Typewriter/Reveal" (DIPERBARUI) --- */
+@keyframes revealFromLeft {
+  from {
+    opacity: 0; /* Mulai dengan tidak terlihat */
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    opacity: 1; /* Selesai dengan terlihat sepenuhnya */
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* --- Konfigurasi Awal untuk Elemen di Bagian "About Me" --- */
+
+/* Sembunyikan semua elemen yang akan dianimasikan */
+.portofolio .text-wrapper-20,
+.portofolio .karldjzy-s-FAMILY,
+.portofolio .star {
+  opacity: 0;
+}
+
+.portofolio .line-5 {
+  transform-origin: top;
+  transform: scaleY(0);
+}
+
+/* --- Penerapan Animasi pada Elemen "About Me" saat class .visible ditambahkan --- */
+
+/* 1. Animasi untuk teks "Excellence takes many forms..." */
+.portofolio .text-wrapper-20.visible {
+  opacity: 1; /* pastikan terlihat */
+  animation: slideInFromLeft 2s ease-out forwards;
+}
+
+/* 2. Animasi untuk garis di bawahnya */
+.portofolio .line-5.visible {
+  animation: growDown 1s ease-out forwards;
+  animation-delay: 2s; /* DELAY: Mulai setelah animasi teks selesai (2 detik) */
+}
+
+/* 3. Animasi untuk teks "Karldjzy's FAMILY" (DIPERBARUI) */
+.portofolio .karldjzy-s-FAMILY.visible {
+  /* Hapus 'opacity: 1' dari sini, biarkan keyframes yang mengaturnya */
+  animation: revealFromLeft 1s ease-in-out forwards;
+  animation-delay: 3s;
+}
+
+/* 4. Animasi untuk Bintang (DIPERBARUI) */
+.portofolio .star.visible {
+  /* Hapus 'opacity: 1' dari sini, biarkan keyframes yang mengaturnya */
+  animation: revealFromLeft 1s ease-in-out forwards;
+  animation-delay: 3.5s;
+}
+
+/* --- Keyframe tambahan untuk fade in sederhana --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* --- Konfigurasi Awal Tambahan untuk "About Me" --- */
+.portofolio .EYES,
+.portofolio .text-wrapper-18 {
+  /* .text-wrapper-18 adalah untuk "LIES" */
+  opacity: 0;
+}
+
+/* --- Penerapan Animasi Tambahan untuk "About Me" --- */
+
+/* 5. Animasi untuk teks "EYES" */
+.portofolio .EYES.visible {
+  animation: fadeIn 3s ease-out forwards;
+  /* DELAY: Mulai setelah animasi bintang selesai (3s delay + 1s durasi = 4s) */
+  animation-delay: 4s;
+}
+
+/* 6. Animasi untuk teks "LIES" */
+.portofolio .text-wrapper-18.visible {
+  animation: fadeIn 2s ease-out forwards;
+  /* DELAY: 2 detik setelah animasi "EYES" mulai (4s + 2s = 6s) */
+  animation-delay: 6s;
+}
+
+/* Menghilangkan gaya default pada link navigasi */
+a.nav-link {
+  text-decoration: none;
+  color: inherit; /* Mengambil warna dari parent */
+}
+
+/* --- Konfigurasi Awal untuk elemen Quotes --- */
+.portofolio .text-wrapper-12,  /* Teks "WEB" */
+.portofolio .text-wrapper-13,  /* Teks "AUDIO" */
+.portofolio .a-well-crafted,   /* Paragraf kutipan web */
+.portofolio .text-wrapper-11 {
+  /* Paragraf kutipan audio */
+  opacity: 0; /* Sembunyikan semua elemen ini pada awalnya */
+}
+
+/* --- Animasi untuk Teks "WEB" dan "AUDIO" (FINAL) --- */
+.portofolio .text-wrapper-12,
+.portofolio .text-wrapper-13 {
+  /* Animasi fade in dengan durasi 1.5s agar serasi dengan .tagline */
+  animation: fadeIn 2.5s ease-out forwards;
+  animation-delay: 4.5s;
+}
+
+/* --- Animasi untuk Paragraf Kutipan (Disesuaikan dengan Tombol) --- */
+.portofolio .a-well-crafted,
+.portofolio .text-wrapper-11 {
+  animation: fadeIn 2s ease-out forwards;
+  /* DELAY BARU: Mulai setelah animasi tombol 'AUDIO' (.k-ANAN) selesai (2.5s delay + 2s durasi) */
+  animation-delay: 4.5s;
+}
+
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Mengisi tinggi layar awal */
+  object-fit: cover; /* Memastikan video menutupi area tanpa distorsi */
+  z-index: 0; /* Meletakkan video di lapisan paling bawah */
+}
+
+/* Pastikan konten utama berada di atas video.
+  Class .overlap sudah memiliki 'position: absolute', 
+  jadi kita hanya perlu menambahkan z-index.
+*/
+.portofolio .overlap {
+  position: absolute;
+  width: 1437px;
+  height: 1724px;
+  top: 0;
+  left: 5px;
+  z-index: 1; /* Pastikan konten ini berada di atas video */
+}
+
+/* ======================================= */
+/* KODE CSS UNTUK FITUR QUICK CHAT       */
+/* ======================================= */
+
+/* --- Container Utama Overlay Chat --- */
+#chat-overlay {
+  position: fixed;
+  top: 0;
+  right: -50vw;
+  width: 50vw;
+  /* PENYESUAIAN: Memastikan tinggi overlay menutupi atas hingga bawah layar */
+  height: 108vh;
+  background-color: #000000;
+  border-left: 3px solid #444;
+  z-index: 1000;
+  /* PENYESUAIAN: Ini adalah animasi slide untuk overlay hitam */
+  transition: right 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- State Aktif/Terlihat untuk Overlay --- */
+#chat-overlay.visible {
+  right: 0;
+}
+
+/* --- Tombol Tutup (Ikon Silang) --- */
+#close-chat {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1002;
+  transition: transform 0.3s ease;
+}
+
+#close-chat:hover {
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* --- Container untuk semua konten chat --- */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+/* --- Area Pesan --- */
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 70px 20px 20px 20px;
+  color: #e0e0e0;
+}
+
+/* Styling untuk pesan */
+.chat-message {
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  border-radius: 12px;
+  max-width: 85%;
+  line-height: 1.5;
+}
+
+.chat-message.bot {
+  background-color: #2a2a2a;
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+}
+
+.chat-message.user {
+  background-color: #1a3a5a;
+  align-self: flex-end;
+  color: #fff;
+  border-bottom-right-radius: 2px;
+}
+
+/* --- Area Input Pesan --- */
+.chat-input-area {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid #333;
+}
+
+#chat-input {
+  flex-grow: 1;
+  background-color: #2c2c2c;
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 12px;
+  color: #fff;
+  font-size: 16px;
+}
+
+#chat-input:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+#send-button {
+  background: none;
+  border: none;
+  margin-left: 12px;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+#send-button:hover {
+  color: #fff;
+}
+
+#send-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* --- Kelas untuk menggeser elemen .overlay-kanan dan .quick-chat --- */
+.portofolio .overlay-kanan.shifted,
+.portofolio .quick-chat.shifted {
+  transform: translateX(-50vw);
+}
+
+/* --- Tambahkan transisi ke elemen yang sudah ada agar animasi berjalannya mulus --- */
+.portofolio .overlay-kanan,
+.portofolio .quick-chat {
+  /* PENYESUAIAN: Animasi transform (pergeseran) disamakan dengan overlay hitam (0.5s ease-in-out).
+     Properti 'all' tetap ada untuk menghormati efek hover yang sudah ada. */
+  transition: transform 0.8s ease-in-out, all 0.5s ease-in-out;
+}
+
+.faq-container {
+  margin-bottom: 20px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  overflow: hidden; /* Penting untuk border-radius */
+}
+
+.faq-item {
+  border-bottom: 1px solid #333;
+}
+.faq-item:last-child {
+  border-bottom: none; /* Hilangkan border pada item terakhir */
+}
+
+.faq-question {
+  /* Reset tampilan default button */
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 16px;
+  color: #e0e0e0;
+  text-align: left;
+  cursor: pointer;
+
+  /* Atur layout dengan flexbox */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question:hover {
+  background-color: #2a2a2a;
+}
+
+.faq-icon {
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+  transform: rotate(45deg); /* Panah ke bawah */
+  transition: transform 0.3s ease-in-out;
+}
+
+.faq-answer {
+  /* Sembunyikan jawaban secara default dengan animasi */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  padding: 0 20px;
+  color: #b0b0b0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.faq-answer p {
+  margin-bottom: 15px;
+}
+
+/* State aktif ketika pertanyaan diklik */
+.faq-item.active .faq-answer {
+  max-height: 200px; /* Atur tinggi maksimal yang cukup */
+  padding: 10px 20px 15px 20px;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(-135deg); /* Panah ke atas */
+}
+
+/* Garis pemisah opsional */
+.chat-divider {
+  height: 1px;
+  background-color: #333;
+  margin: 0 0 20px 0;
+}
+
+.contact-button {
+  display: inline-block; /* Agar bisa diatur padding dan margin */
+  background-color: #000000; /* Warna latar hitam */
+  color: #ffffff; /* Warna teks putih */
+  padding: 10px 25px; /* Jarak antara teks dan pinggir tombol */
+  margin-top: 10px; /* Jarak dari paragraf di atasnya */
+  border-radius: 8px; /* Membuat sisi tombol melengkung */
+  text-decoration: none; /* Menghilangkan garis bawah pada link */
+  font-weight: bold;
+  border: 1px solid #333; /* Memberi sedikit garis pinggir */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Animasi halus */
+}
+
+.contact-button:hover {
+  background-color: #222222; /* Warna sedikit lebih terang saat disentuh mouse */
+  transform: translateY(-2px); /* Tombol sedikit terangkat saat disentuh */
+}
+
+/* ======================================= */
+/* KODE CSS TAMBAHAN UNTUK PESAN BOT/USER */
+/* ======================================= */
+
+.chat-message {
+  display: flex;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  border-radius: 12px;
+  max-width: 85%;
+  line-height: 1.5;
+  color: #e0e0e0;
+}
+
+/* Pesan dari bot akan di kiri */
+.chat-message.bot {
+  background-color: #2a2a2a;
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+}
+
+/* Pesan dari pengguna akan di kanan */
+.chat-message.user {
+  background-color: #1a4a7a; /* Warna berbeda untuk user */
+  align-self: flex-end; /* Pindahkan ke kanan */
+  color: #fff;
+  border-bottom-right-radius: 2px;
+}
+
+/* Memastikan area pesan bisa di-scroll dengan mulus */
+.chat-messages {
+  display: flex; /* Diperlukan untuk align-self */
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px;
+  scroll-behavior: smooth; /* Animasi scroll halus */
+}
+
+.chat-message.bot-thinking p {
+  color: #888;
+}
